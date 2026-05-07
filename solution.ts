@@ -10,6 +10,12 @@
 
 
  // problem 2
+ function reverseString(str: string): string {
+    return str.split('').reverse().join('');
+ }
+
+ const result = reverseString("typescript");
+  
 
 
 
