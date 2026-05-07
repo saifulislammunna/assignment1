@@ -58,10 +58,10 @@ function toggleReadStatus(book: Book): Book & { isRead: boolean } {
 }
 
 
-const myBook: Book = { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2024 };
+const myBook= { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2024 };
 
 
-const updatedBook = toggleReadStatus(myBook);
+toggleReadStatus(myBook);
 
  
 
@@ -72,7 +72,7 @@ const updatedBook = toggleReadStatus(myBook);
   public age: number;
 
   constructor(name: string, age: number) {
-    // Assign them manually
+    
     this.name = name;
     this.age = age;
   }
@@ -93,7 +93,7 @@ class Student extends Person {
 
  
 const student = new Student("Alice", 20, "A");
- 
+student.getDetails(); 
 
 // problem 7
  
@@ -105,8 +105,8 @@ function getIntersection(arr1: number[], arr2: number[]): number[] {
   return [...new Set(arr1.filter(num => set2.has(num)))];
 }
 
-const result7 = getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]);
-
+getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]);
+ 
  
  
 
