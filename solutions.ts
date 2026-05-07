@@ -5,8 +5,6 @@
 
  filterEvenNumber([1, 2, 3, 4, 5, 6]);
   
-
-
  // problem 2
  function reverseString(str: string): string {
     return str.split('').reverse().join('');
@@ -14,9 +12,6 @@
 
  reverseString("typescript");
  
-  
-
-
 // problem 3
 type StringOrNumber = string | number;
 
@@ -31,8 +26,6 @@ function checkType(value: StringOrNumber): "String" | "Number" {
 checkType("Hello");
 checkType(42);
  
-
-
 // problem 4
 function getProperty<T, K extends keyof T>(obj: T, key: K): T[K]{
     return obj[key];
@@ -56,18 +49,14 @@ function toggleReadStatus(book: Book): Book & { isRead: boolean } {
   };
 }
 
-
-const myBook= { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2024 };
-
+const myBook = { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2024 };
 
 toggleReadStatus(myBook);
 
+ // problem 6
  
-
-// problem 6
  class Person {
-   
-  public name: string;
+   public name: string;
   public age: number;
 
   constructor(name: string, age: number) {
@@ -95,9 +84,7 @@ const student = new Student("Alice", 20, "A");
 student.getDetails(); 
 
 // problem 7
- 
-
-function getIntersection(arr1: number[], arr2: number[]): number[] {
+ function getIntersection(arr1: number[], arr2: number[]): number[] {
  
   const set2 = new Set(arr2);
  
