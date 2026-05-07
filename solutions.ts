@@ -29,6 +29,10 @@ function checkType(value: StringOrNumber): "String" | "Number" {
     }
 
 }
+checkType("Hello");
+checkType(42);
+ 
+
 
 // problem 4
 function getProperty<T, K extends keyof T>(obj: T, key: K): T[K]{
