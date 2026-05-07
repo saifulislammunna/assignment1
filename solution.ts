@@ -5,7 +5,6 @@
 
  const input = [1, 2, 3, 4, 5, 6];
  const output = filterEvenNumber(input);
-
  
 
 
@@ -15,8 +14,22 @@
  }
 
  const result = reverseString("typescript");
+
   
 
 
+// problem 3
+type StringOrNumber = string | number;
 
- // problem 3
+function checkType(value: StringOrNumber): "String" | "Number" {
+    if (typeof value === "string") {
+        return "String"
+    }else {
+        return "Number";
+    }
+
+}
+
+
+
+ 
