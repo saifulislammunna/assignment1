@@ -9,33 +9,11 @@ Conversely, unknown is the safer choice for unpredictable data because it acts a
 
 Using any tells the TypeScript compiler to "trust you" and stop checking the variable. This allows unsafe operations that will likely crash at runtime, which TypeScript is supposed to prevent.
 
-Coding Example: The any Danger
-
-let userInput: any;
-userInput = "Hello World";
-userInput = 42;
-
-// TypeScript allows these completely unsafe operations
-userInput.toUpperCase(); // Runtime Error: .toUpperCase is not a function
-userInput.someNonExistentMethod(); // No compiler error, will crash at runtime
 
 2. Why unknown is the Safer Choice
 
 The unknown type requires you to perform type checks (narrowing) before acting on data. It prevents runtime errors by forcing you to handle the unpredictability.
 
-Coding Example: The unknown Safety
-
-let userInput: unknown;
-userInput = "Hello World";
-
-// ERROR: Object is of type 'unknown'.
-// userInput.toUpperCase(); 
-
-// Safety: TypeScript forces you to check the type first
-if (typeof userInput === "string") {
-    // Inside this block, TypeScript knows userInput is a string
-    console.log(userInput.toUpperCase()); // Safe
-}
 
 3. Understanding Type Narrowing
 
@@ -49,20 +27,4 @@ Methods of Narrowing:
 •	in operator: Used to check for specific properties in objects.
 •	Custom Type Guards: Functions that return a type predicate (e.g., pet is Dog). 
 
-Comprehensive Coding Example
-
-interface Dog { bark: () => void }
-interface Cat { meow: () => void }
-
-function handlePet(pet: Dog | Cat | unknown) {
-    // 1. Narrowing using "in" operator (Discriminated Union approach)
-    if (pet && typeof pet === 'object' && 'bark' in pet) {
-        pet.bark(); // TS knows pet is Dog
-    } 
-    // 2. Narrowing using 'if' check after casting (safe narrowing)
-    else if (typeof pet === 'object' && pet !== null && 'meow' in pet) {
-        pet.meow(); // TS knows pet is Cat
-    } else {
-        console.log("Unknown animal type");
-    }
-}
+ 
