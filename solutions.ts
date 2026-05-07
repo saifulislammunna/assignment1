@@ -13,8 +13,8 @@
     return str.split('').reverse().join('');
  }
 
- const result = reverseString("typescript");
-
+ reverseString("typescript");
+ 
   
 
 
