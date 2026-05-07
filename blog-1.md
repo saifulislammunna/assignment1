@@ -6,9 +6,11 @@ In TypeScript, the any type is considered a type safety hole because it essentia
 Conversely, unknown is the safer choice for unpredictable data because it acts as a "responsible" alternative: it allows you to assign any type to it, but it forbids using that variable until you prove its type through type narrowing.
 
 1. Why any is a Type Safety Hole
+
 Using any tells the TypeScript compiler to "trust you" and stop checking the variable. This allows unsafe operations that will likely crash at runtime, which TypeScript is supposed to prevent.
 
 Coding Example: The any Danger
+
 let userInput: any;
 userInput = "Hello World";
 userInput = 42;
@@ -18,9 +20,11 @@ userInput.toUpperCase(); // Runtime Error: .toUpperCase is not a function
 userInput.someNonExistentMethod(); // No compiler error, will crash at runtime
 
 2. Why unknown is the Safer Choice
+
 The unknown type requires you to perform type checks (narrowing) before acting on data. It prevents runtime errors by forcing you to handle the unpredictability.
 
 Coding Example: The unknown Safety
+
 let userInput: unknown;
 userInput = "Hello World";
 
@@ -34,6 +38,7 @@ if (typeof userInput === "string") {
 }
 
 3. Understanding Type Narrowing
+
 Type narrowing is the process of moving from a less precise type (like unknown, any, or a union type) to a more specific type (like string, number, or a specific interface) within a conditional block.
 
 TypeScript uses control flow analysis (if, else, switch, typeof) to determine the refined type.
