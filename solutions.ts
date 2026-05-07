@@ -40,7 +40,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: K): T[K]{
 }
 
 const user = { id: 1, name: "John Doe", age: 21 };
-const result4 = getProperty(user, "name");
+getProperty(user, "name");
  
 
 // problem 5
