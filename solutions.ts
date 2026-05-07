@@ -1,9 +1,9 @@
  // problem 1
- function filterEvenNumber(numbers: number[]): number[] {
+ function filterEvenNumbers(numbers: number[]): number[] {
     return numbers.filter(num => num % 2 === 0);
  }
 
- filterEvenNumber([1, 2, 3, 4, 5, 6]);
+ filterEvenNumbers([1, 2, 3, 4, 5, 6]);
   
  // problem 2
  function reverseString(str: string): string {
@@ -54,7 +54,7 @@ const myBook = { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2
 toggleReadStatus(myBook);
 
  // problem 6
- 
+
  class Person {
    public name: string;
   public age: number;
