@@ -30,6 +30,22 @@ function checkType(value: StringOrNumber): "String" | "Number" {
 
 }
 
+// problem 4
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K]{
+    return obj[key];
+}
 
+const user = { id: 1, name: "John Doe", age: 21 };
+const result4 = getProperty(user, "name");
+ 
+
+
+
+
+// problem 5
+
+// problem 6
+
+// problem 7
 
  
