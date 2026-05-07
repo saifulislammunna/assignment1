@@ -62,6 +62,34 @@ const updatedBook = toggleReadStatus(myBook);
  
 
 // problem 6
+ class Person {
+   
+  public name: string;
+  public age: number;
+
+  constructor(name: string, age: number) {
+    // Assign them manually
+    this.name = name;
+    this.age = age;
+  }
+}
+
+class Student extends Person {
+  public grade: string;
+
+  constructor(name: string, age: number, grade: string) {
+    super(name, age);
+    this.grade = grade;
+  }
+
+  getDetails(): string {
+    return `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`;
+  }
+}
+
+ 
+const student = new Student("Alice", 20, "A");
+ 
 
 // problem 7
 
